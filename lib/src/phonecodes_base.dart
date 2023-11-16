@@ -24,7 +24,7 @@ class Countries {
   /// Throws an exception if the country could not be found
   static Country findByName(String name) {
     return _list.firstWhere(
-      (country) => country.name == name,
+      (country) => country.name.toLowerCase() == name.toLowerCase(),
       orElse: () {
         throw CountryNotFoundException(name);
       },
